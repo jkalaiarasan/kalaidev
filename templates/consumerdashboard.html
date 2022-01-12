@@ -1,0 +1,275 @@
+<html lang="">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="Propeller is a front-end responsive framework based on Material design &amp; Bootstrap.">
+      <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+      <title>Consumer Dashboard</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=BioRhyme&amp;display=swap" rel="stylesheet">
+      <!-- Bootstrap --> 
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+      <!-- Example docs (CSS for helping component example file)-->
+      <link href="https://pro.propeller.in/docs/css/docs.css" type="text/css" rel="stylesheet">
+      <!-- Propeller card (CSS for helping component example file) -->
+      <link href="https://pro.propeller.in/components/propeller-components/card/css/card.css" type="text/css" rel="stylesheet">
+      <!-- Propeller typography -->
+      <link href="https://pro.propeller.in/components/propeller-components/typography/css/typography.css" type="text/css" rel="stylesheet">
+      <!-- Google Icon Font -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://pro.propeller.in/components/propeller-components/icons/css/google-icons.css" type="text/css" rel="stylesheet">
+      <!-- Propeller navbar -->
+      <link href="https://pro.propeller.in/components/propeller-components/navbar/css/navbar.css" type="text/css" rel="stylesheet">
+      <!-- Propeller button  -->
+      <link href="https://pro.propeller.in/components/propeller-components/button/css/button.css" type="text/css" rel="stylesheet">
+      <!-- Propeller list  -->
+      <link href="https://pro.propeller.in/components/propeller-components/list/css/list.css" type="text/css" rel="stylesheet">
+      <!-- Propeller sidebar  -->
+      <link rel="stylesheet" type="text/css" href="https://pro.propeller.in/components/propeller-components/sidebar/css/sidebar.css">
+      <style>
+         .example_e {
+            border: none;
+            background: #404040;
+            color: #ffffff !important;
+            font-weight: 100;
+            padding: 20px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+         }
+         @media only screen and (min-width: 770px ) {
+            .example_e:hover {
+               color: #404040 !important;
+               font-weight: 700 !important;
+               letter-spacing: 3px;
+               background: none;
+               -webkit-box-shadow: 0px 5px 40px -10px rgba(71, 66, 66, 0.57);
+               -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+               transition: all 0.3s ease 0s;
+            }
+         }
+         @media only screen and (max-width: 770px ) {
+            #productcontent {
+               display: block !important;
+            }
+            .inter{
+               width:100% !important;
+            }
+         }
+      </style>
+   </head>
+   <body style="font-family: 'BioRhyme', serif;" class="" onload="bodyLoad()">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark pmd-navbar pmd-z-depth">
+         <a href="javascript:void(0);" data-target="basicSidebar" data-placement="left" is-open="true" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pmd-sidebar-toggle"><i class="material-icons md-light">menu</i></a>
+         <a class="navbar-brand" href="javascript:void(0);">Menu</a>
+         <!-- Navbar Right icon -->		
+         <div class="pmd-navbar-right-icon ml-auto">
+            <a href="javascript:void(0);" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect"><i class="material-icons pmd-sm md-light">search</i></a>
+         </div>
+      </nav>
+      <section id="pmd-main">
+         <!-- Left sidebar -->
+         <aside id="basicSidebar" class="pmd-sidebar bg-light pmd-sidebar-left pmd-sidebar-left-fixed" role="navigation">
+            <ul class="nav flex-column pmd-sidebar-nav">
+               <li class="nav-item pmd-user-info">
+                  <a data-toggle="collapse" href="#collapseExample" class="nav-link btn-user media align-items-center collapsed" aria-expanded="false">
+                     <img class="mr-3" id="photo" src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40" alt="avatar">
+                     <div class="media-body" id="name">
+                        User
+                     </div>
+                     <i class="material-icons md-light ml-2 pmd-sm">more_vert</i>
+                  </a>
+                  <ul class="collapse" id="collapseExample" data-parent="#basicSidebar" style="">
+                     <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">
+                        <i class="material-icons pmd-list-icon pmd-sm">account_circle</i>
+                        <span class="media-body">View Profile</span>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">
+                        <i class="material-icons pmd-list-icon pmd-sm">camera</i>
+                        <span class="media-body">Upload/Change Photo</span>
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">
+                        <i class="material-icons pmd-list-icon pmd-sm">settings</i>
+                        <span class="media-body">Settings</span>
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="nav-item" id="aboutbutton" onclick="navClick(this.id)">
+                  <a class="nav-link active" id="aboutbutton2" href="javascript:void(0);">
+                  <i class="material-icons pmd-list-icon pmd-sm">polymer</i>
+                  <span class="media-body">About</span>
+                  </a>
+               </li>
+               <li class="nav-item" id="productbutton" onclick="navClick(this.id)">
+                  <a class="nav-link" id="productbutton2" href="javascript:void(0);">
+                  <i class="material-icons pmd-list-icon pmd-sm">flare</i>
+                  <span class="media-body">Products</span>
+                  </a>
+               </li>
+               <li class="nav-item" id="orderbutton" onclick="navClick(this.id)">
+                  <a class="nav-link" id="orderbutton2" href="javascript:void(0);">
+                  <i class="material-icons pmd-list-icon pmd-sm">toys</i>
+                  <span class="media-body">Order</span>
+                  </a>
+               </li>
+               <li class="nav-item" id="logout">
+                  <a class="nav-link" href="javascript:void(0);">
+                  <i class="material-icons pmd-list-icon pmd-sm">settings_power</i>
+                  <span class="media-body">Logout</span>
+                  </a>
+               </li>
+            </ul>
+         </aside>
+         <script>
+            function navClick(id){
+               document.getElementById("aboutbutton2").classList.remove('active');
+               document.getElementById("productbutton2").classList.remove('active');
+               document.getElementById("orderbutton2").classList.remove('active');
+               document.getElementById(id + "2").classList.add('active');
+               document.getElementById("basicSidebar").classList.remove('pmd-sidebar-open');
+               document.getElementById("overlay").classList.remove('pmd-sidebar-overlay-active');
+               document.getElementById("about").style.display = "none";
+               document.getElementById("order").style.display = "none";
+               document.getElementById("product").style.display = "none";
+               if(id.includes("about")){
+                  document.getElementById("about").style.display = "block";
+               } else 
+               if(id.includes("order")){
+                  document.getElementById("order").style.display = "block";
+               } else
+               if(id.includes("product")){
+                  document.getElementById("product").style.display = "block";
+               }
+            }
+         </script>
+         <!-- Start Content -->
+         <div class="pmd-content custom-pmd-content" id="about">
+            <h2 class="headline">About Lorem ipsum dolor sit amet</h2>
+            <p>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <p style="margin-bottom:0;">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br><br></p>
+         </div>
+         <div class="pmd-content custom-pmd-content" style="display: none;height: fit-content;" id="product">
+            <div class="button_cont" align="right">
+               <a class="example_e" href="#" onclick="refressProduct()" rel="nofollow noopener">
+                  Refress Product
+               </a>
+            </div>
+            <div id="productcontent" style="display: flex;">
+            </div>
+         </div>
+         <div class="pmd-content custom-pmd-content" style="display: none;" id="order">
+            <div class="button_cont" align="right">
+               <a class="example_e" href="#" rel="nofollow noopener">
+                  Refress Order
+               </a>
+            </div>
+         </div>
+      </section>
+      <div class="pmd-sidebar-overlay" id="overlay"></div>
+      <script>
+         var token = localStorage.token;
+         if(!token){
+            location.href = "/";
+         }
+
+         $( "#logout" ).click(function() {
+            delete localStorage["token"];
+            location.href = "/";
+         });
+         function bodyLoad(){
+            profileLoad();
+            productLoad();
+         }
+         
+         function refressProduct(){
+            var productcontent = document.getElementById("productcontent");
+            productcontent.innerHTML = null;
+            productLoad();
+         }
+
+         function profileLoad(){
+            axios.post('/consumer/dashboard', {
+                  'token': localStorage["token"]
+               })
+               .then((res) => {
+                  if(res.data.done == true){
+                     var record = res.data.records[0];
+                     document.getElementById("name").innerHTML = record.Name;
+                     if(record.Photo__c)
+                        document.getElementById("photo").src = record.Photo__c;
+                        document.getElementById("photo").style.borderRadius  = "50%";
+                  } else {
+                     delete localStorage["token"];
+                     location.href = "/";
+                  }
+               })
+               .catch((error) => {
+                  delete localStorage["token"];
+                  location.href = "/";
+                  console.error(error);
+               });
+         }
+
+         function productLoad(){
+            axios.get('/consumer/product', {
+                  params: {
+                     'token': localStorage["token"]
+                  }
+               })
+               .then((res) => {
+                  if(res.data.done == true){
+                     var products = res.data.records;
+                     if(products.length > 0){
+                        var productcontent = document.getElementById("productcontent");
+                        productcontent.innerHTML = null;
+                        for(product of products){
+
+                           let item = document.createElement("div");
+                           item.classList.add("inter");
+                           item.style.width = "25%";
+                           item.style.textAlign = "center";
+
+                           let id = product.Id;
+                           let name = product.Name;
+                           let offerAmount = product.Amount__c;
+                           let originalAmount = product.Original_Amount__c;
+                           let photo = product.Photo__c;
+                           let off = Math.ceil((originalAmount - offerAmount) / originalAmount * 100);
+                           item.innerHTML = "<div style=\"height:225px\"><img src=\" " + photo + "\" style=\"width: 235px;\"></div>\
+                                             <p style=\"margin-bottom: 0px;\">" + name + "</p> \
+                                             <p style=\"margin-bottom: 0px;\"><s>₹" + originalAmount + "</s>(" + off + "% off)</p>\
+                                             <p style=\"margin-bottom: 0px;\">₹ " + offerAmount + " </p>\
+                                             <i style=\"margin-right: -15px;\" class=\"material-icons pmd-list-icon pmd-sm\">edit</i> \
+                                             <i class=\"material-icons pmd-list-icon pmd-sm\">delete</i>";
+                           productcontent.appendChild(item);
+                        }
+                     }
+                  }
+               })
+               .catch((error) => {
+                  console.error(error);
+               })
+         }
+      </script>
+      <!-- Jquery js -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <!-- Popper Js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <!-- Bootstrap js -->
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <!-- Propeller Global js --> 
+      <script src="https://pro.propeller.in/components/propeller-components/global/js/global.js"></script>
+      <!-- Propeller Sidebar js -->
+      <script type="text/javascript" language="javascript" src="https://pro.propeller.in/components/propeller-components/sidebar/js/sidebar.js"></script>
+   </body>
+</html>

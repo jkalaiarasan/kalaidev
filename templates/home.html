@@ -1,0 +1,365 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %} Kalaiyarasan Developing Site.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="http://rajakambalamelite.org/assets/img/favicon.jpg">
+		{% block style %}{% endblock %}
+		<!-- all css here -->
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/owl.carousel.min.css">
+        <!--<link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/font-awesome.min.css">-->
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://demo.hasthemes.com/trust-preview/trust/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- font awesome end -->
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/et-line-icon.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/bicon.min.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/slick.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/meanmenu.min.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/bundle.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/style.css">
+        <link rel="stylesheet" href="http://rajakambalamelite.org/assets/css/responsive.css">
+        <script src="http://rajakambalamelite.org/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+	<style>
+		#missionDone::after {
+ 			 content: " +";
+		} 
+	</style>
+    </head>    
+    <body>
+        <header class="header-area absolute-bar">
+            <div class="header-top">
+                <div class="container">
+                    <div class="bar-border ptb-15">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-8 col-sm-8">
+                                <div class="header-info">
+                                    <ul>
+                                        <li><i class="fa fa-envelope"></i> <a href="#">jkalaiarasan86@gmail.com</a></li>
+                                        <li><i class="fa fa-phone"></i> <a href="tel:+917868883417">+91 78688 83417</a></li>
+										 <li><a href="dashboard/index.php"> </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-4 col-sm-4">
+                                <div class="header-social f-right">
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="https://twitter.com/OfficialRkeet">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/rajakambalam-elite-educational-trust-5851261b0/">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom transparent-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="logo" style="padding-top: 1px;">
+                                <table>
+	<tbody>
+	<tr>
+		<td><a href="index.php"><!--img src="{{url_for('static', filename='onlineshopping.jpg')}}"  style="height: 75px;" alt=""--></a></td>
+		<td><a href="index.php"><p style="
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 0px;
+    color: #2929e0;
+    font-weight: bold;
+    text-align: center;
+">KALAIYARASAN DEVELOPING SITE</p><p style="
+    font-family: 'Roboto Slab', serif;
+    margin-bottom: 0px;
+    color: #2929e0;
+    font-weight: bold;
+    text-align: center;
+">LOREM IPSUM</p><p style="
+    /* font-family: 'Roboto Slab', serif; */
+    margin-bottom: 0px;
+    color: #3f673d;
+    font-weight: bold;
+    text-align: center;
+">REG.NO : 7548 / KMP / 2020</p></a></td>
+		
+	</tr>
+	</tbody></table>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 d-none d-md-block">
+                            <div class="main-menu menu-style-2 f-right">
+                                <nav>
+                                    <ul>
+                                        <li><a href="/">HOME </a></li>
+                                        <li><a href="#">PRODUCT  <i class="fa fa-angle-down"></i></a>
+                                            <ul>
+												<li><a href="gallery.php">GALLERY</a></li>
+                                                <li><a href="event.php">EVENTS </a></li>
+												<li><a href="trending.php">TRENDING. </a></li>
+                                                <li><a href="blog.php">BLOGS</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.php">CONTACT</a></li>
+                                        <li><a href="#"><i class="fa fa-user"></i> Add Product  </a>
+                                            <ul>
+                                                <li><a href="/consumer/login"><i class="fa fa-unlock"></i> LOGIN </a></li>
+									            <li><a href="/consumer/register">Register Consumer</a></li>
+                                            </ul>
+                                        </li>
+										<li><a href="#"><i class="fa fa-user"></i> Account  </a>
+                                            <ul>
+                                                <li><a href="/customer/login"><i class="fa fa-unlock"></i> LOGIN </a></li>
+									            <li><a href="/customer/register">BECOME MEMBER</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-block d-md-none mobile-menu-style-2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mobile-menu">
+                                    <nav id="mobile-menu-active">
+                                        <ul>
+                                        <li><a href="/">HOME </a></li>
+                                        <li><a href="#">PRODUCT  <i class="fa fa-angle-down"></i></a>
+                                            <ul>
+												<li><a href="gallery.php">GALLERY</a></li>
+                                                <li><a href="event.php">EVENTS </a></li>
+												<li><a href="trending.php">TRENDING </a></li>
+                                                <li><a href="blog.php">BLOGS</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.php">CONTACT</a></li>
+										<li><a href="#"><i class="fa fa-user"></i> ADD PRODUCT  </a>
+                                            <ul>  
+						 						<li><a href="/consumer/login"><i class="fa fa-unlock"></i> LOGIN </a></li>
+												<li><a href="/consumer/register">Register Consumer</a></li>
+						                    </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-user"></i> Account  </a>
+                                            <ul>  
+						 						<li><a href="/customer/login"><i class="fa fa-unlock"></i> LOGIN </a></li>
+												<li><a href="/customer/register">BECOME MEMBER</a></li>
+						                    </ul>
+                                        </li>
+                                    </ul>
+                                    </nav>							
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+		<div class="slider-area bg-img pb-260 pt-340" style="background-color: black;">
+            <div id="content" style="margin-top: -50px;">{% block content %}
+            <div class="container">
+                    <div class="slider-text slider-text-2 z-index">
+                        <h2>Lorem ipsum dolor sit amet<span> Shopping</span></h2>
+                        <h1>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua <span>relationship.</span></h1>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                        <a class="button theme-bg" href="/customer/register">REGISTER</a>
+                    </div>
+                </div>
+            {% endblock %}
+            </div>    
+		</div>
+        <div class="services-area-4 pt-120">
+            <div class="container">
+                <div class="services-border pb-90">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="single-service text-center mb-30">
+                                <i class="fa fa-users  fa-3x fa-fw"></i>
+                                <span class="sr-only">Graduation...</span>
+                                <h3>People </h3>
+                                <p>We are one,Together We Grow</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="single-service text-center mb-30">
+                                <i class="fa fa-graduation-cap  fa-3x fa-fw"></i>
+                                <span class="sr-only">Graduation...</span>
+                                <h3>Education Support </h3>
+                                <p>We are supporting Our young people for education and more organized activities.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="single-service text-center mb-30">
+                                <i class="fa fa-briefcase  fa-3x fa-fw"></i>
+                                <span class="sr-only">jobs...</span>
+                                <h3>Job opportunity </h3>
+                                <p>The key to success is to find a best job.we are here for help.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="funfact-area pt-120 pb-90" data-overlay="5.5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="project-count text-center mb-30">
+                            <h2 class="counter">10</h2>
+                            <span>Consumer</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="project-count text-center mb-30">
+                            <h2 class="counter" id='missionDone'>110</h2>
+                            <span>Products</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="project-count text-center mb-30">
+                            <h2 class="counter">1000</h2>
+                            <span>Customers</span>
+                        </div>
+                    </div>
+					 <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="project-count text-center mb-30">
+                            <h2 class="counter">100</h2>
+                            <span>Premium Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="action-area theme-bg ptb-60">
+            <div class="container">
+                <div class="action-text-button">
+                    <div class="action-text f-left">
+                        <h3>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </h3>
+                    </div>
+                    <div class="action-button f-right">
+                        <a class="button white-bg" href="/consumer/register">Register Now</a>
+                    </div>
+                </div>
+                <div class="action-text"></div>
+            </div>
+        </div>
+        <footer class="footer-area pt-120 black-bg">
+            <div class="container">
+                <div class="footer-top pb-55">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-50">
+                            <div class="footer-weiget">
+                                <h3 class="weiget-title">ABOUT US</h3>
+                                <div class="weiget-info">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <div class="footer-social">
+                                        <ul>
+                                            <li> <a href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a></li>
+                                            <li><a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a></li>
+                                            <li><a href="#">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-50">
+                            <div class="footer-weiget">
+                                <h3 class="weiget-title">IMPORTANT INFO</h3>
+                                <div class="weiget-info">
+                                    <ul>
+                                        
+										<li><a href="#">Donate</a></li>
+                                        <li><a href="event.php">Events</a></li>
+										<li><a href="jobs_new.php">Jobs</a></li>
+										<li><a href="competitive.php">Competitive</a></li>
+										<li><a href="trending.php">Trending</a></li>
+										<li><a href="blog.php">Blogs</a></li>
+										
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-50">
+                            <div class="footer-weiget">
+                                <h3 class="weiget-title">IMPORTANT LINKS</h3>
+                                <div class="weiget-info">
+                                    <ul>
+                                        <li><a href="about-us.php">About Us</a></li>
+										<li><a href="contact.php">Quick Contact</a></li>
+										<li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                        <li><a href="gallery.php">Media Resources</a></li>
+										<li><a href="trustees.php">Trustees</a></li>
+						<li><a href="members-list.php">Trust Members</a></li>
+
+                                        <li><a href="tecnical-team.php">Technical Team</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-lg-3 col-md-6 col-sm-6 mb-50">
+                            <div class="footer-weiget">
+                                <h3 class="weiget-title">WE SUPPORT</h3>
+                                <div class="weiget-info">
+                                    <ul>
+                                        <li><a href="about-us.php">Leaders</a></li>
+										<li><a href="https://www.makeinindia.com/home">Make in India</a></li>
+										<li><a href="http://www.tnpsc.gov.in/">TNPSC</a></li>
+                                        <li><a href="https://www.upsc.gov.in/">UPSC</a></li>
+										<li><a href="https://www.india.gov.in/">National portal of India</a></li>
+                                        <li><a href="https://www.tn.gov.in/">Government of Tamil Nadu</a></li>
+										<li><a href="https://www.ncs.gov.in/">National Career Service</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="footer-bottom text-center">
+                            <p>Copyright © <a href="#" target="blank">Shopping</a> 2020 . ALL Right Reserved .</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="http://rajakambalamelite.org/assets/js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/popper.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/bootstrap.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/isotope.pkgd.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/jquery.counterup.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/waypoints.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/ajax-mail.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/owl.carousel.min.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/plugins.js"></script>
+        <script src="http://rajakambalamelite.org/assets/js/main.js"></script>
+    </body>
+</html>
