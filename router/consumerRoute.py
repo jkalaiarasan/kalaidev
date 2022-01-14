@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, jsonify
 from authentication.authenticateSalesforce import sf
 import bcrypt
-import jwt
+from jose import jwt
 import json
+from dotenv import load_dotenv
 
 password = None
 hashedPassword = None
@@ -41,7 +42,7 @@ def consumerLoginPage():
                 if key == 'Name':
                     name = value
             if bcrypt.checkpw(password.encode('utf8'), hashedPassword.encode('utf-8')) == True:
-                token = jwt.encode({'name':name, 'id':Id}, 'FLEKNNIRQSQ')
+                token = jwt.encode({'name':name, 'id':Id}, "FLEKNNIRQSQ", algorithm="HS256")
                 data = {"token": token}
                 return jsonify(data)
             else:
@@ -75,25 +76,26 @@ def consumerAccountPage():
     if request.method == 'GET':
         return render_template('consumerdashboard.html')
     if request.method == 'POST':
-        req = request.data
-        data = json.loads(req)
-        token = data["token"]
+        Authorization = request.headers['Authorization']
+        token = Authorization[7:]
+        print("token ", token)
         try:
-            data = jwt.decode(token, "FLEKNNIRQSQ")
+            data = jwt.decode(token, "FLEKNNIRQSQ", algorithms=['HS256'])
+            print("data ", data)
             Id = data["id"]
             record = sf.query("SELECT Id, Name, Email__c, Photo__c FROM Consumer__c WHERE Id = \'" + Id + "\'")
             return record
         except:
-            return "False"
+            return {"error" : "Somethink went wrong"}
 
 @consumer.route('/product', methods = ['GET', 'POST'])
 def getProduct():
     if request.method == 'GET':
         token = request.args.get('token')
         try:
-            data = jwt.decode(token, "FLEKNNIRQSQ")
+            data = jwt.decode(token, key)
             Id = data["id"]
             record = sf.query("SELECT Id, Name, Amount__c, Original_Amount__c, Photo__c FROM Product__c WHERE Consumer__c = \'" + Id + "\'")
             return record
         except:
-            return "False"
+            return {"error" : "Somethink went wrong"}
