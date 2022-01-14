@@ -91,9 +91,10 @@ def consumerAccountPage():
 @consumer.route('/product', methods = ['GET', 'POST'])
 def getProduct():
     if request.method == 'GET':
-        token = request.args.get('token')
+        Authorization = request.headers['Authorization']
+        token = Authorization[7:]
         try:
-            data = jwt.decode(token, key)
+            data = jwt.decode(token, "FLEKNNIRQSQ", algorithms=['HS256'])
             Id = data["id"]
             record = sf.query("SELECT Id, Name, Amount__c, Original_Amount__c, Photo__c FROM Product__c WHERE Consumer__c = \'" + Id + "\'")
             return record
