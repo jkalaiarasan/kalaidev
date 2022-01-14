@@ -42,7 +42,7 @@ def consumerLoginPage():
                     name = value
             if bcrypt.checkpw(password.encode('utf8'), hashedPassword.encode('utf-8')) == True:
                 token = jwt.encode({'name':name, 'id':Id}, 'FLEKNNIRQSQ')
-                data = {"token": token.decode("utf-8")}
+                data = {"token": token}
                 return jsonify(data)
             else:
                 data = {"Message": "Your Password is incorrect"}
