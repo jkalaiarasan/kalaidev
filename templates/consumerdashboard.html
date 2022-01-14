@@ -227,11 +227,14 @@
          }
 
          function productLoad(){
-            axios.get('/consumer/product', {
-                  params: {
-                     'token': localStorage["token"]
-                  }
-               })
+            let data = {};
+
+            let headers = {
+                              headers: {
+                                 'Authorization': "Bearer " + localStorage["token"] 
+                              }
+                           };
+            axios.get('/consumer/product', headers)
                .then((res) => {
                   if(res.data.done == true){
                      var products = res.data.records;
