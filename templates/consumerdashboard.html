@@ -198,9 +198,15 @@
          }
 
          function profileLoad(){
-            axios.post('/consumer/dashboard', {
-                  'token': localStorage["token"]
-               })
+            let data = {};
+
+            let headers = {
+                              headers: {
+                                 'Authorization': "Bearer " + localStorage["token"] 
+                              }
+                           };
+
+            axios.post('/consumer/dashboard', data, headers)
                .then((res) => {
                   if(res.data.done == true){
                      var record = res.data.records[0];
