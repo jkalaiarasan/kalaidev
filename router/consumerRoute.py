@@ -78,10 +78,8 @@ def consumerAccountPage():
     if request.method == 'POST':
         Authorization = request.headers['Authorization']
         token = Authorization[7:]
-        print("token ", token)
         try:
             data = jwt.decode(token, "FLEKNNIRQSQ", algorithms=['HS256'])
-            print("data ", data)
             Id = data["id"]
             record = sf.query("SELECT Id, Name, Email__c, Photo__c FROM Consumer__c WHERE Id = \'" + Id + "\'")
             return record
@@ -98,5 +96,20 @@ def getProduct():
             Id = data["id"]
             record = sf.query("SELECT Id, Name, Amount__c, Original_Amount__c, Photo__c FROM Product__c WHERE Consumer__c = \'" + Id + "\'")
             return record
+        except:
+            return {"error" : "Somethink went wrong"}
+    if request.method == 'POST':
+        Authorization = request.headers['Authorization']
+        token = Authorization[7:]
+        try:
+            data = jwt.decode(token, "FLEKNNIRQSQ", algorithms=['HS256'])
+            consumerId = data["id"]
+            req = request.data
+            data = json.loads(req)
+            name = data["Name"]
+            offerAmount = data["Amount"]
+            originalAmount = data["OriginalAmount"]
+            insert = sf.Product__c.create({'Name':name, 'Amount__c':offerAmount, 'Original_Amount__c':originalAmount, "Consumer__c" : consumerId})
+            return insert
         except:
             return {"error" : "Somethink went wrong"}
